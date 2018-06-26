@@ -1,0 +1,5 @@
+package: serverless-golang
+import:
+- package: github.com/aws/aws-lambda-go
+  subpackages:
+  - lambda

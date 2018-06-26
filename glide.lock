@@ -1,0 +1,15 @@
+hash: 136a1b4352fe5d527533eaa751420d67def186f3703de02305ce9017f24c8d62
+updated: 2018-06-26T21:13:28.729629683+09:00
+imports:
+- name: github.com/aws/aws-lambda-go
+  version: 4d30d0ff60440c2d0480a15747c96ee71c3c53d4
+  subpackages:
+  - events
+  - lambda
+  - lambda/messages
+  - lambdacontext
+- name: github.com/fnproject/fdk-go
+  version: 1eb29530716f262bad5b83eb9a5b3f7483636949
+  subpackages:
+  - utils
+testImports: []

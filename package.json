@@ -1,0 +1,10 @@
+{
+  "name": "serverless-golang",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:serverless/serverless-golang.git",
+  "license": "MIT",
+  "devDependencies": {
+    "serverless": "^1.27.3"
+  }
+}

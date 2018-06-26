@@ -1,0 +1,35 @@
+service: aws-golang
+provider:
+  name: aws
+  runtime: go1.x
+  memorySize: 128
+  stage: dev
+  region: us-west-2
+  # vpc:
+  #   securityGroupIds:
+  #     - sg-xxxxxxxx
+  #   subnetIds:
+  #     - subnet-xxxxxxxx
+  #     - subnet-xxxxxxxx
+  # iamRoleStatements:
+  #   - Effect: "Allow"
+  #     Action:
+  #       - "ec2:CreateNetworkInterface"
+  #       - "ec2:DescribeNetworkInterfaces"
+  #       - "ec2:DeleteNetworkInterface"
+  #     Resource:
+  #       - "*"
+package:
+ exclude:
+   - ./**
+ include:
+   - ./bin/**
+
+functions:
+  test:
+    handler: bin/main
+    events: 
+      - http:
+          path: /
+          method: get
+
