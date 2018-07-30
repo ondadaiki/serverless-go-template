@@ -7,7 +7,7 @@ import (
 )
 
 type App struct {
-	router   Router
+	routes   []Route
 	request  events.APIGatewayProxyRequest
 	response events.APIGatewayProxyResponse
 }
@@ -36,11 +36,11 @@ func (app *App) addRoute(method, path string, handler Handler) {
 		path:    path,
 		handler: handler,
 	}
-	app.router.routes = append(app.router.routes, route)
+	app.routes = append(app.routes, route)
 }
 
 func (app *App) Run() (events.APIGatewayProxyResponse, error) {
-	for _, value := range app.router.routes {
+	for _, value := range app.routes {
 		if value.path == app.request.Resource {
 			if value.method == app.request.HTTPMethod {
 				return value.handler(app.request)
