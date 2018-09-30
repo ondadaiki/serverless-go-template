@@ -1,9 +1,11 @@
-package App
+package app
+
+import "serverless-go-template/controller"
 
 type Route struct {
-	method  string
-	path    string
-	handler Handler
+	method     string
+	path       string
+	controller controller.Controller
 }
 
 func (app *App) NewRouter() []Route {

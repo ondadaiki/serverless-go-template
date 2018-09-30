@@ -20,16 +20,15 @@ provider:
   #     Resource:
   #       - "*"
 package:
- exclude:
-   - ./**
- include:
-   - ./bin/**
+  exclude:
+    - ./**
+  include:
+    - ./bin/**
 
 functions:
-  test:
+  findUser:
     handler: bin/main
-    events: 
+    events:
       - http:
-          path: /
+          path: /users/{id}
           method: get
-
